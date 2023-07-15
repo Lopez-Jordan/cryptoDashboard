@@ -3,29 +3,47 @@
     padding: 0 !important;
     font-family: 'Titillium Web', sans-serif !important;
     letter-spacing: 2px !important;
-    color: white !important;
-    background-color: black !important;
 }
 
 #survey{
-    float: left;
+    float: right;
+    width: 40% !important;
+    background-color: grey !important;
+    border: 2px solid black;
 }
+#survey-form{
+    padding: 20px;
+}
+
 .crypto-input {
     margin-bottom: 10px !important;
-  }
+}
 
-
-  #submit-button{
+#submit-button{
     padding: 10px 20px !important;
     border: 2px solid white;
     background: linear-gradient(to top left, #0066ff 0%, #ff66cc 100%);
     outline: none;
-    border-radius: 15px ;
+    border-radius: 15px;
     color: white;
     font-weight: bolder !important;
-    
 }
 #submit-button:hover{
     background: none;
     background-color: black;
 }
+
+#visDivOne{
+    display: ;
+}
+#visDivTwo{
+    display: ;
+}
+#visDivThree{
+    display: ;
+}
+#visDivFour{
+    display: ;
+}
+
+
