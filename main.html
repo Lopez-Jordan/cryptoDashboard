@@ -13,10 +13,69 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>main content page!</h1>
+    <div id="survey" class="uk-flex uk-flex-column" >
+        <h2>Create Custom Portfolio!</h2>
 
-    <div id="survey">
 
+
+        <!-- ------------------------------------------------------------------------------------------ -->
+        <form action="">
+            <h5>What shall we refer to you by?</h5>
+            <div class="uk-margin">
+                <input class="uk-input uk-form-width-medium" type="text" placeholder="name" aria-label="Default">
+            </div>
+        
+            
+            <h5>What is your crypto currency experience level?</h5>
+            <div class="uk-margin">
+                <div uk-form-custom="target: > * > span:first-child">
+                    <select aria-label="Custom controls">
+                        
+                        <option value="1">Beginner</option>
+                        <option value="2">Intermediate</option>
+                        <option value="3">Advanced</option>
+                    </select>
+                    <button class="uk-button uk-button-default" type="button">
+                        <span></span>
+                        <span uk-icon="icon: chevron-left"></span>
+                    </button>
+                </div>
+            </div>
+
+            <h5>How much would you like to invest? (USD)</h5>
+            <div class="uk-margin">
+                <input class="uk-input uk-form-width-small" type="text" placeholder=" <100 mil" aria-label="Small">
+            </div>
+
+
+
+            <div id="crypto-form">
+                <h2>Select Cryptocurrencies and Weights</h2>
+                
+                <div class="crypto-input">
+                  <label for="crypto1">Crypto 1:</label>
+                  <input type="text" id="crypto1" class="crypto-symbol" placeholder="Symbol">
+                  <input type="number" id="crypto1-weight" class="crypto-weight" placeholder="Weight (%)">
+                </div>
+                
+                <!-- Repeat the above block for crypto 2, 3, 4, and 5 -->
+                
+                <button id="submit-button">Submit</button>
+                <p id="error-message"></p>
+              </div>
+
+
+
+
+
+
+
+            <!-- ------------------------------------------------------------------------------------------ -->
+
+
+
+
+        </form>
     </div>
 
     <div id="dashboard">
@@ -37,6 +96,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="./assets/script.js"></script>
 <!-- UIkit JS -->
+<script src="uikit/dist/js/uikit-icons.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js"></script>
 </html>
