@@ -6,8 +6,8 @@
 }
 
 #survey{
-    float: right;
-    width: 40% !important;
+    float: left;
+    width: 50% !important;
     background-color: grey !important;
     border: 2px solid black;
 }
@@ -32,18 +32,18 @@
     background: none;
     background-color: black;
 }
-
+/* ------------------------------------------------------------------ */
 #visDivOne{
-    display: ;
+    display: none;
 }
 #visDivTwo{
-    display: ;
+    display: none ;
 }
 #visDivThree{
-    display: ;
+    display: none;
 }
 #visDivFour{
-    display: ;
+    display: none;
 }
 
 
