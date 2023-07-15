@@ -15,17 +15,11 @@
 <body>
     <div id="survey" class="uk-flex uk-flex-column" >
         <h2>Create Custom Portfolio!</h2>
-
-
-
-        <!-- ------------------------------------------------------------------------------------------ -->
-        <form action="">
+        <form id="surveyForm" action="">
             <h5>What shall we refer to you by?</h5>
             <div class="uk-margin">
                 <input class="uk-input uk-form-width-medium" type="text" placeholder="name" aria-label="Default">
             </div>
-        
-            
             <h5>What is your crypto currency experience level?</h5>
             <div class="uk-margin">
                 <div uk-form-custom="target: > * > span:first-child">
@@ -41,40 +35,27 @@
                     </button>
                 </div>
             </div>
-
             <h5>How much would you like to invest? (USD)</h5>
             <div class="uk-margin">
                 <input class="uk-input uk-form-width-small" type="text" placeholder=" <100 mil" aria-label="Small">
             </div>
-
-
-
-            <div id="crypto-form">
-                <h2>Select Cryptocurrencies and Weights</h2>
-                
-                <div class="crypto-input">
-                  <label for="crypto1">Crypto 1:</label>
-                  <input type="text" id="crypto1" class="crypto-symbol" placeholder="Symbol">
-                  <input type="number" id="crypto1-weight" class="crypto-weight" placeholder="Weight (%)">
-                </div>
-                
-                <!-- Repeat the above block for crypto 2, 3, 4, and 5 -->
-                
-                <button id="submit-button">Submit</button>
-                <p id="error-message"></p>
-              </div>
-
-
-
-
-
-
-
-            <!-- ------------------------------------------------------------------------------------------ -->
-
-
-
-
+            <h5>Choose your crypto's and weights (max 5)</h5>
+            <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Bitcoin" aria-label="Small">
+            <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="5 (%)" aria-label="Small">
+            <br>
+            <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Ethereum" aria-label="Small">
+            <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="10 (%)" aria-label="Small">
+            <br>
+            <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Tether" aria-label="Small">
+            <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="20 (%)" aria-label="Small">
+            <br>
+            <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: XRP" aria-label="Small">
+            <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="30 (%)" aria-label="Small">
+            <br>
+            <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Solana" aria-label="Small">
+            <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="35 (%)" aria-label="Small">
+            <br>
+            <button id="submit-button">submit</button>
         </form>
     </div>
 
