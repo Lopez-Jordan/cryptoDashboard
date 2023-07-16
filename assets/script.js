@@ -1,15 +1,38 @@
-$("#beginBtn").on("click", function(){
+$("#beginBtn").on("click", function(){ // button to take from welcome page to main page
     location.replace("main.html");
 });
 
 
-function validateForm(data){
- 
+function validateForm(data){ // validating the survey object for correct user input
+  if (data.userName == ""){
+    alert("Please enter a name"); // change to a modal
+    return false;
+  }
+  if (isNaN(data.totalInvestment)){
+    alert("Not a number"); // change to a modal
+    return false;
+  }
+  if (data.totalInvestment < 0 || data.totalInvestment > 100000000){
+    alert("Incorrect investment Value, please enter a value in the correct range (0-100,000,000)");
+    return false;
+  }
+  var totalPercent = 0;
+  for (var i=0; i<5; i++){
+    totalPercent += data.coins[i].percent;
+  }
+  if (isNaN(totalPercent)){
+    alert("Make sure you have '0's' for values coins you don't want to invest it");
+    return false;
+  }
+  if (totalPercent != 100){
+    alert("Your portfolio weights do not add up to 100!");
+    return false;
+  }
+  return true;
 }
-
+// submitting and validating the form itself
 $("#surveyForm").on("submit", function(e){
   e.preventDefault(); // still haven't created object yet
-
   var coin1Obj = {
     symbol : $("#coin1").val(),
     percent: parseInt($("#percent1").val())
@@ -43,9 +66,6 @@ $("#surveyForm").on("submit", function(e){
     localStorage.setItem("user", JSON.stringify(newObj)); //not done!!!!
   }
     console.log(newObj); // just for tests!!!
-  
-
-
   $("#visDivOne").css("display","none");
   $("#visDivTwo").css("display","none");
   $("#visDivThree").css("display","none");
@@ -56,6 +76,8 @@ $("#surveyForm").on("submit", function(e){
   $("#nextThree").css("display","block");
 });
 
+
+// creating the dynamic parts of the form
 $("#create").on("click", function(){
   $("#visDivOne").css("display","block");
   $("#create").css("display","none");
