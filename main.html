@@ -23,7 +23,7 @@
             <div id="visDivOne">
                 <h5>What shall we refer to you by?</h5>
                 <div class="uk-margin">
-                    <input class="uk-input uk-form-width-medium" type="text" placeholder="name" aria-label="Default">
+                    <input id="inputName" class="uk-input uk-form-width-medium" type="text" placeholder="name" aria-label="Default">
                 </div>
                 <br>
                 <button class="next-class" id="nextOne" type="button">next</button>
@@ -33,7 +33,7 @@
                 <h5>What is your crypto currency experience level?</h5>
                 <div class="uk-margin">
                     <div uk-form-custom="target: > * > span:first-child">
-                        <select aria-label="Custom controls">
+                        <select id="inputLevel" aria-label="Custom controls">
                             <option value="1">Beginner</option>
                             <option value="2">Intermediate</option>
                             <option value="3">Advanced</option>
@@ -51,7 +51,7 @@
             <div id="visDivThree">
                 <h5>How much would you like to invest? (USD)</h5>
                 <div class="uk-margin">
-                    <input class="uk-input uk-form-width-small" type="text" placeholder=" <100 mil" aria-label="Small">
+                    <input id="investment" class="uk-input uk-form-width-small" type="text" placeholder=" <100 mil" aria-label="Small">
                 </div>
                 <br>
                 <button class="next-class" id="nextThree" type="button">next</button>
@@ -59,20 +59,20 @@
 
             <div id="visDivFour">
                 <h5>Choose your crypto's and weights (max 5)</h5>
-                <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Bitcoin" aria-label="Small">
-                <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="5 (%)" aria-label="Small">
+                <input id="coin1" class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Bitcoin" aria-label="Small">
+                <input id="percent1" class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="5 (%)" aria-label="Small">
                 <br>
-                <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Ethereum" aria-label="Small">
-                <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="10 (%)" aria-label="Small">
+                <input id="coin2" class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Ethereum" aria-label="Small">
+                <input id="percent2" class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="10 (%)" aria-label="Small">
                 <br>
-                <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Tether" aria-label="Small">
-                <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="20 (%)" aria-label="Small">
+                <input id="coin3" class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Tether" aria-label="Small">
+                <input id="percent3" class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="20 (%)" aria-label="Small">
                 <br>
-                <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: XRP" aria-label="Small">
-                <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="30 (%)" aria-label="Small">
+                <input id="coin4" class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: XRP" aria-label="Small">
+                <input id="percent4" class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="30 (%)" aria-label="Small">
                 <br>
-                <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Solana" aria-label="Small">
-                <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="35 (%)" aria-label="Small">
+                <input id="coin5" class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Solana" aria-label="Small">
+                <input id="percent5" class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="35 (%)" aria-label="Small">
                 <br>
                 <div class="uk-flex uk-flex-center uk-margin-top">
                     <button id="submit-button">submit</button>
