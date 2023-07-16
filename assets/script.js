@@ -1,8 +1,6 @@
 $("#beginBtn").on("click", function(){ // button to take from welcome page to main page
     location.replace("main.html");
 });
-
-
 function validateForm(data){ // validating the survey object for correct user input
   if (data.userName == ""){
     alert("Please enter a name"); // change to a modal
@@ -63,7 +61,7 @@ $("#surveyForm").on("submit", function(e){
   }
 
   if (validateForm(newObj)){
-    localStorage.setItem("user", JSON.stringify(newObj)); //not done!!!!
+    localStorage.setItem(newObj.userName, JSON.stringify(newObj));
   }
     console.log(newObj); // just for tests!!!
   $("#visDivOne").css("display","none");
@@ -75,8 +73,6 @@ $("#surveyForm").on("submit", function(e){
   $("#nextTwo").css("display","block");
   $("#nextThree").css("display","block");
 });
-
-
 // creating the dynamic parts of the form
 $("#create").on("click", function(){
   $("#visDivOne").css("display","block");
@@ -95,4 +91,4 @@ $("#nextThree").on("click",function(){
   $("#nextThree").css("display","none");
 });
 
-
+// starting the education section
