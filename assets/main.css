@@ -46,7 +46,7 @@
     display: ;
 }
 
-#dashCard {
+.dashCard {
     width: 25%;
     height: 150px;
     text-align: center;
