@@ -6,8 +6,10 @@ $("#surveyForm").on("submit", function(e){
   e.preventDefault();
 });
 
-function getTotalInvestment() {
 
+function getTotalInvestment() {
+  var totInv = localStorage.getItem("totalInvestment");
+  document.getElementById("totalInvestment").textContent = totInv;
 }
 
 function getNetWorth() {
@@ -15,5 +17,5 @@ function getNetWorth() {
 }
 
 function getProfit() {
-  
+
 }
