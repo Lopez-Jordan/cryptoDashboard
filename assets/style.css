@@ -103,3 +103,8 @@ bottom: 20px;
     justify-content: center;
     align-items: center;
 }
+
+#dashboard {
+    width: 25%;
+    height: 200px;
+}
