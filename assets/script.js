@@ -114,10 +114,10 @@ $("#getInfo").on("click",function(){
     var imgUrl = data.Data.LOGO_URL;
     var nameOfCoin = data.Data.NAME;
     $("#coinLogo").attr('src', imgUrl);
-
     $("#nameOfCoin").text(nameOfCoin);
-    
-
+  })
+  .catch(function(){
+    alert("Please enter a valid coin");
   });
   
 

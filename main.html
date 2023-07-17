@@ -20,8 +20,8 @@
         <div id="education">
             <div>
                 <h2>1: Get familiar with each coin before making an investment decision!</h2>
-                <h4 class="uk-margin-top">Choose a coin (symbol):</h4>
-                <input placeholder="ie: BTC" type="text" id="coinInfo">
+                <h4 class="uk-margin-top">Choose a coin (symbol)</h4>
+                <input class="uk-margin-top uk-input uk-form-width-medium uk-form-small" placeholder="ie: BTC" type="text" id="coinInfo">
                 <br>
                 <button class="submit-button" id="getInfo">get info</button>
             </div>
@@ -31,23 +31,20 @@
                     <h3 class="uk-margin-right" id="nameOfCoin"></h3>
                     <img id="coinLogo" src="" alt="coin logo">
                 </div>
-                <h4 class="uk-margin-small-bottom">Summary:</h4>
+                <h4 id="summary" class="uk-margin-top uk-margin-small-bottom">Summary</h4>
                 <p class="uk-margin-medium-left" id="contentP"></p>
-
-
-
             </div>
 
         </div>
         <div id="survey" class="uk-flex uk-flex-column uk-flex-middle" >
             <form id="surveyForm" action="">
-                <h2>2: Create Custom Portfolio!</h2>
+                <h2>2: Create custom portfolio!</h2>
                 <button class="uk-margin-top submit-button" id="create" type="button">create</button>
 
                 <div id="visDivOne">
-                    <h5>What shall we refer to you by?</h5>
+                    <h5 class="uk-margin-top">What shall we refer to you by?</h5>
                     <div class="uk-margin">
-                        <input id="inputName" class="uk-input uk-form-width-medium" type="text" placeholder="name" aria-label="Default">
+                        <input id="inputName" class="uk-input uk-form-width-small" type="text" placeholder="name" aria-label="Default">
                     </div>
                     <br>
                     <button class="submit-button" id="nextOne" type="button">next</button>
@@ -82,7 +79,7 @@
                 </div>
 
                 <div id="visDivFour">
-                    <h5>Choose your crypto's and weights (max 5)</h5>
+                    <h5 class="uk-margin-bottom">Choose your crypto's and weights (max 5)</h5>
                     <input id="coin1" class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: BTC" aria-label="Small">
                     <input value="0" id="percent1" class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="5 (%)" aria-label="Small">
                     <br>
@@ -98,7 +95,7 @@
                     <input id="coin5" class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: SOL" aria-label="Small">
                     <input value="0" id="percent5" class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="35 (%)" aria-label="Small">
                     <br>
-                    <div class="uk-flex uk-flex-center uk-margin-top">
+                    <div class=" uk-margin-top">
                         <button class="submit-button">make portfolio!</button>
                     </div>
                 </div>
