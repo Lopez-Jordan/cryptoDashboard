@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 $("#beginBtn").on("click", function(){ // button to take from welcome page to main page
     location.replace("main.html");
 });
@@ -121,6 +119,8 @@ $("#getInfo").on("click",function(){
   
 
 });
+123 
+345
 
 
 
@@ -370,7 +370,7 @@ $("#getInfo").on("click",function(){
 
 
 
->>>>>>> f986a37b84a7684e57262d62c117a58767a6ef0a
+
 
 
 
