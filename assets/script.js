@@ -63,7 +63,6 @@ $("#surveyForm").on("submit", function(e){
   if (validateForm(newObj)){
     localStorage.setItem(newObj.userName, JSON.stringify(newObj));
   }
-    console.log(newObj); // just for tests!!!
   $("#visDivOne").css("display","none");
   $("#visDivTwo").css("display","none");
   $("#visDivThree").css("display","none");
@@ -92,3 +91,22 @@ $("#nextThree").on("click",function(){
 });
 
 // starting the education section
+$("#getInfo").on("click",function(){
+  var symbol = $("#coinInfo").val();
+  console.log(symbol);
+  var descURL = "https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol=" + symbol + "&api_key=4643002f15269f3fab2e433e581986eb8e0d2eb7711e7b78e90fb547713396df";
+  fetch(descURL)
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    console.log(data); // Log the entire data object to inspect its structure
+    $("#contentP").text(data.Data.ASSET_DESCRIPTION_SUMMARY);
+  });
+
+
+
+
+  $("#contentP").text()// api in here
+
+});
