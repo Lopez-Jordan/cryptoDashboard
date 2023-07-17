@@ -3,31 +3,41 @@
     padding: 0 !important;
     font-family: 'Titillium Web', sans-serif !important;
     letter-spacing: 2px !important;
+    background-color: black !important;
+    color: white !important;
+    
 }
+h1, h2{
+    color: white !important;
+    padding: 10px !important;
+    border-bottom: 2px solid white;
+
+}
+
+
 #survey{
-    width: 400px !important;
-    background-color: grey !important;
-    border: 2px solid black;
+    width: 20% !important;
+    padding-left: 30px !important;
+    border-left: 2px solid white;
 }
-#survey-form{
-    padding: 20px;
-}
+
 .crypto-input {
     margin-bottom: 10px !important;
 }
-#submit-button{
+.submit-button{
     padding: 10px 20px !important;
     border: 2px solid white;
     background: linear-gradient(to top left, #0066ff 0%, #ff66cc 100%);
     outline: none;
     border-radius: 15px;
     color: white;
-    font-weight: bolder !important;
+
 }
-#submit-button:hover{
+.submit-button:hover{
     background: none;
     background-color: black;
 }
+
 /* ------------------------------------------------------------------ */
 #visDivOne{
     display: none;
@@ -43,10 +53,12 @@
 }
 #education{
     border: 2px solid black;
+    padding-left: 50px !important;
+    border-left: 2px solid white !important;
 }
 
 #getInfo{
-/* to do */
+    margin-top: 20px !important;
 }
 #flex-main{
     display: flex;
@@ -58,8 +70,12 @@
 #coinLogo{
     width: 7%;
     height: auto;
+    padding: 5px !important;
+    background-color: rgb(255, 255, 255) !important;
+    border: 2px solid black !important;
+    border-radius: 10px !important;
 }
 #education{
     width: 50%;
-    margin-right: 70px !important;
+    margin-right: 50px !important;
 }
