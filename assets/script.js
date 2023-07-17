@@ -97,9 +97,6 @@ $("#getInfo").on("click",function(){
   if ($("#coinInfo").val() == ""){
     alert("Please enter a coin!");
   }
-
-
-
   var symbol = $("#coinInfo").val();
   console.log(symbol);
   var descURL = "https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol=" + symbol + "&api_key=4643002f15269f3fab2e433e581986eb8e0d2eb7711e7b78e90fb547713396df";
