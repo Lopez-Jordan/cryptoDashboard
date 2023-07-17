@@ -6,11 +6,12 @@ $("#surveyForm").on("submit", function(e){
   e.preventDefault();
 });
 
-
+// global vars
 var totalInv = localStorage.getItem("totalInvestment");
 var coins = localStorage.getItem("coins");
 var numCoins = coins.length;
 
+// function to display dashboard
 function displayDashboard() {
   for (i=0; i<numCoins; i++) {
     renderTotalInvestment();
@@ -19,10 +20,13 @@ function displayDashboard() {
   }
 }
 
+// function to retrieve and render total investment
 function renderTotalInvestment() {
   document.getElementById("totalInvest").textContent = totalInv;
 }
 
+// function to calculate and render total investment
+// makes call to crypto compare api
 function renderNetWorth(name) {
   var url = "https://min-api.cryptocompare.com/data/v2/histoday?fsym=" + name + "&tsym=USD&limit=10";
   fetch(url)
@@ -43,6 +47,8 @@ function renderNetWorth(name) {
     });
   }
 
+  // function to calculate and render profit
+  // makes call to crypto compare api
 function renderProfit(name) {
   var url = "https://min-api.cryptocompare.com/data/v2/histoday?fsym=" + name + "&tsym=USD&limit=10";
   fetch(url)
