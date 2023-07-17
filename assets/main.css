@@ -46,9 +46,20 @@
 }
 
 #getInfo{
-
+/* to do */
 }
-
 #flex-main{
     display: flex;
+    justify-content: center !important;
+}
+#content-div{
+    display: none;
+}
+#coinLogo{
+    width: 7%;
+    height: auto;
+}
+#education{
+    width: 50%;
+    margin-right: 70px !important;
 }
