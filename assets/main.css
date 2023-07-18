@@ -3,9 +3,14 @@
     padding: 0 !important;
     font-family: 'Titillium Web', sans-serif !important;
     letter-spacing: 2px !important;
-    background-color: black !important;
     color: white !important;
+    background-color: black !important;
 }
+html{
+    color: black !important;
+}
+
+
 h1, h2{
     color: white !important;
     padding: 10px !important;
@@ -46,9 +51,7 @@ h1, h2{
 #getInfo{
     margin-top: 20px !important;
 }
-#flex-main{
-    display: flex;
-}
+
 #content-div{
     display: none;
 }
@@ -65,3 +68,43 @@ h1, h2{
     margin-right: 50px !important;
 }
 
+#parent-nav{
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+}
+ul{
+    list-style: none !important;
+    justify-content: end !important;
+    background-color: white !important;
+    
+}
+a{
+    color: white !important;
+    text-transform: uppercase !important;
+
+}
+#flex-main{
+    display: flex;
+    margin-top: 90px !important;
+}
+li{
+    padding: 30px !important;
+    background-color: white !important;
+}
+li a{
+    background-color: white !important;
+    color: black !important;
+    font-weight: bolder !important;
+}
+li:hover{
+    background-color: black !important;
+    color:  white !important;
+}
+li a:hover{
+    border: none !important;
+    text-decoration: none !important;
+    background-color: black !important;
+    color: white !important;
+}

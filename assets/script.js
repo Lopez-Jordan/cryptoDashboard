@@ -134,6 +134,7 @@ var percentage = 0.20
 
 
 
+
 //Part 1: Populate Coin Name
 function populateCoinName(){
     for(var i=0; i<coinList.length; i++){
