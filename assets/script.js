@@ -51,6 +51,7 @@ $("#surveyForm").on("submit", function(e){
     symbol : $("#coin5").val(),
     percent: parseInt($("#percent5").val())
   }
+
   var newObj = {
     userName: $("#inputName").val(),
     visited: true,
@@ -58,6 +59,7 @@ $("#surveyForm").on("submit", function(e){
     totalInvestment : parseInt($("#investment").val()),
     coins: [coin1Obj, coin2Obj, coin3Obj, coin4Obj, coin5Obj]
   }
+
   if (validateForm(newObj)){
     localStorage.setItem(newObj.userName, JSON.stringify(newObj));
   }
@@ -87,9 +89,11 @@ $("#nextThree").on("click",function(){
   $("#visDivFour").css("display", "block");
   $("#nextThree").css("display","none");
 });
+
 // starting the education section
 $("#getInfo").on("click",function(){
   $("#content-div").css("display", "block");
+  
   if ($("#coinInfo").val() == ""){
     alert("Please enter a coin!");
   }
@@ -103,6 +107,7 @@ $("#getInfo").on("click",function(){
   .then(function(data){
     console.log(data); // Log the entire data object to inspect its structure
     $("#contentP").text(data.Data.ASSET_DESCRIPTION_SUMMARY);
+    
     var imgUrl = data.Data.LOGO_URL;
     var nameOfCoin = data.Data.NAME;
     $("#coinLogo").attr('src', imgUrl);
@@ -111,16 +116,24 @@ $("#getInfo").on("click",function(){
   .catch(function(){
     alert("Please enter a valid coin");
   });
+  
+
 });
 
-var coinList=['BTC','ETH','ETH','ETH','ETH']
+
+// STARTS HERE --------------------------------------
+// var coinList=['BTC','ETH','ETH','ETH','ETH']
 
 var profitList=[]
 
 var pastDayEarningRateHighSum=[]
-var level = 'advanced'
+var level = newObj.level;
 var totalAmount  = 10000000
 var percentage = 0.20
+
+
+
+
 //Part 1: Populate Coin Name
 function populateCoinName(){
     for(var i=0; i<coinList.length; i++){
@@ -244,7 +257,7 @@ function getTradingVolume(coinList){
 
 
 
-//1.3 populate data
+// 1.3 populate data
 // var proAmountList = getProfitApi(coinList)
 // console.log(proAmountList)
 
