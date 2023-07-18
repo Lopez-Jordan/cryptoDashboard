@@ -1,112 +1,122 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Dashboard</title>
-    <link rel="stylesheet" href="./assets/main.css" />
+    <link rel="stylesheet" href="./assets/main.css">
     <!-- UIkit CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/css/uikit.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/css/uikit.min.css" />
     <!-- Google Fonts CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    />
-  </head>
-  <body>
-    <div id="survey" class="uk-flex uk-flex-column uk-flex-middle" >
-        
-        <form id="surveyForm" action="">
-            <h2>Create Custom Portfolio!</h2>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+</head>
 
-            <div id="visDivOne">
-                <h5>What shall we refer to you by?</h5>
-                <div class="uk-margin">
-                    <input class="uk-input uk-form-width-medium" type="text" placeholder="name" aria-label="Default">
-                </div>
-                <br>
-                <button class="next-class" id="nextOne" type="button">next</button>
-            </div>
-
-            <div id="visDivTwo">
-                <h5>What is your crypto currency experience level?</h5>
-                <div class="uk-margin">
-                    <div uk-form-custom="target: > * > span:first-child">
-                        <select aria-label="Custom controls">
-                            
-                            <option value="1">Beginner</option>
-                            <option value="2">Intermediate</option>
-                            <option value="3">Advanced</option>
-                        </select>
-                        <button class="uk-button uk-button-default" type="button">
-                            <span></span>
-                            <span uk-icon="icon: chevron-left"></span>
-                        </button>
-                    </div>
-                </div>
-                <br>
-                <button class="next-class" id="nextTwo" type="button">next</button>
-            </div>
-
-            <div id="visDivThree">
-                <h5>How much would you like to invest? (USD)</h5>
-                <div class="uk-margin">
-                    <input class="uk-input uk-form-width-small" type="text" placeholder=" <100 mil" aria-label="Small">
-                </div>
-                <br>
-                <button class="next-class" id="nextOne" type="button">next</button>
-            </div>
-
-            <div id="visDivFour">
-                <h5>Choose your crypto's and weights (max 5)</h5>
-                <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Bitcoin" aria-label="Small">
-                <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="5 (%)" aria-label="Small">
-                <br>
-                <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Ethereum" aria-label="Small">
-                <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="10 (%)" aria-label="Small">
-                <br>
-                <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Tether" aria-label="Small">
-                <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="20 (%)" aria-label="Small">
-                <br>
-                <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: XRP" aria-label="Small">
-                <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="30 (%)" aria-label="Small">
-                <br>
-                <input class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: Solana" aria-label="Small">
-                <input class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="35 (%)" aria-label="Small">
-                <br>
-                <div class="uk-flex uk-flex-center uk-margin-top">
-                    <button id="submit-button">submit</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-
+<body>
+  <header>
+    <div id="parent-nav">
+      <nav>
+          <ul id="ulNavs" class="uk-flex">
+            <li>
+              <a href="#first">Get Familiar</a>
+            </li>
+            <li>
+              <a href="#second">Create Portolio</a>
+            </li>
+            <li>
+              <a href="#third">Manage Investments</a>
+            </li id="last">
+          </ul>
+      </nav>
     <div>
-        <h1 class="uk-text-center uk-margin-bottom">Your Custom Portfolio Dashboard</h1>
-    </div>
+  </header>
+  <div id="flex-main">
+      <div id="education">
+          <div>
+              <h2>1: Get familiar with each coin before making an investment decision!</h2>
+              <h4 class="uk-margin-top">Choose a coin (symbol)</h4>
+              <input class="uk-margin-top uk-input uk-form-width-medium uk-form-small" placeholder="ie: BTC" type="text" id="coinInfo">
+              <br>
+              <button class="submit-button" id="getInfo">get info</button>
+          </div>
 
-    <div id="dashboard" class="uk-flex uk-flex-row uk-flex-center">
-        <div id="totalInvest" class="dashElement uk-card uk-card-large uk-card-default uk-card-body uk-margin-left">Total Investment</div>
-        <div id="netWorth" class="dashElement uk-card uk-card-large uk-card-default uk-card-body uk-margin-left">Net Worth</div>
-        <div id="profit" class="dashElement uk-card uk-card-large uk-card-default uk-card-body uk-margin-left">Profit/Loss</div>
-    </div>
+          <div id="content-div" class="uk-animation-slide-left-medium">
+              <div class="uk-flex uk-margin-medium-top">
+                  <h3 class="uk-margin-right" id="nameOfCoin"></h3>
+                  <img id="coinLogo" src="" alt="coin logo">
+              </div>
+              <h4 id="summary" class="uk-margin-top uk-margin-small-bottom">Summary</h4>
+              <p class="uk-margin-medium-left" id="contentP"></p>
+          </div>
 
+      </div>
+      <div id="survey" class="uk-flex uk-flex-column uk-flex-middle" >
+          <form id="surveyForm" action="">
+              <h2>2: Create custom portfolio!</h2>
+              <button class="uk-margin-top submit-button" id="create" type="button">create</button>
 
+              <div id="visDivOne" class="uk-animation-slide-right-medium">
+                  <h5 class="uk-margin-top">What shall we refer to you by?</h5>
+                  <div class="uk-margin">
+                      <input id="inputName" class="uk-input uk-form-width-small" type="text" placeholder="name" aria-label="Default">
+                  </div>
+                  <br>
+                  <button class="submit-button" id="nextOne" type="button">next</button>
+              </div>
 
+              <div id="visDivTwo" class="uk-animation-slide-right-medium">
+                  <h5>What is your crypto currency experience level?</h5>
+                  <div class="uk-margin">
+                      <div uk-form-custom="target: > * > span:first-child">
+                          <select id="inputLevel" aria-label="Custom controls">
+                              <option value="1">Beginner</option>
+                              <option value="2">Intermediate</option>
+                              <option value="3">Advanced</option>
+                          </select>
+                          <button class="uk-button uk-button-default" type="button">
+                              <span></span>
+                              <span uk-icon="icon: chevron-left"></span>
+                          </button>
+                      </div>
+                  </div>
+                  <br>
+                  <button class="submit-button next-class" id="nextTwo" type="button">next</button>
+              </div>
+              <div id="visDivThree" class="uk-animation-slide-right-medium">
+                  <h5>How much would you like to invest? (USD)</h5>
+                  <div class="uk-margin">
+                      <input id="investment" class="uk-input uk-form-width-small" type="text" placeholder=" <100 mil" aria-label="Small">
+                  </div>
+                  <br>
+                  <button class="submit-button next-class" id="nextThree" type="button">next</button>
+              </div>
+              <div id="visDivFour" class="uk-animation-slide-right-medium">
+                  <h5 class="uk-margin-bottom">Choose your crypto's and weights (max 5)</h5>
+                  <input id="coin1" class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: BTC" aria-label="Small">
+                  <input value="0" id="percent1" class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="5 (%)" aria-label="Small">
+                  <br>
+                  <input id="coin2" class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: ETH" aria-label="Small">
+                  <input value="0" id="percent2" class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="10 (%)" aria-label="Small">
+                  <br>
+                  <input id="coin3" class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: USDT" aria-label="Small">
+                  <input value="0" id="percent3" class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="20 (%)" aria-label="Small">
+                  <br>
+                  <input id="coin4" class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: XRP" aria-label="Small">
+                  <input value="0" id="percent4" class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="30 (%)" aria-label="Small">
+                  <br>
+                  <input id="coin5" class="uk-input uk-form-width-medium uk-form-small" type="text" placeholder="ie: SOL" aria-label="Small">
+                  <input value="0" id="percent5" class="uk-input uk-form-width-small uk-form-small" type="number" placeholder="35 (%)" aria-label="Small">
+                  <br>
+                  <div class=" uk-margin-top">
+                      <button class="submit-button">make portfolio!</button>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
 
-    
-
-  <!--Profolio Performance cards-->
   <section class="totalClass">
     <h3 class="m-3"> Poforlio Performance</h3>
     <div class="m-3 d-flex justify-content-between">
@@ -140,7 +150,7 @@
           </div>
   </section>
 
-  <!--individual cards-->
+
   <section class="individualClass">
     <div class="m-3 d-flex justify-content-between">
       <div class="col-2">
@@ -184,18 +194,12 @@
       </div>
     </div>
   </section>
-
-
-
-
-
-
 </body>
 <!-- jQuery and normal script file -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="./assets/script.js"></script>
 <!-- UIkit JS -->
-<script src="uikit/dist/js/uikit-icons.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js"></script>
 </html>

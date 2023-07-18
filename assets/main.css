@@ -3,10 +3,13 @@
     padding: 0 !important;
     font-family: 'Titillium Web', sans-serif !important;
     letter-spacing: 2px !important;
-    background-color: black !important;
     color: white !important;
-    
+    background-color: black !important;
 }
+html{
+    color: black !important;
+}
+
 
 h1, h2{
     color: white !important;
@@ -36,6 +39,7 @@ h1, h2{
 .submit-button:hover{
     background: none;
     background-color: black;
+    transition-duration: 0.2s !important;
 }
 /* ------------------------------------------------------------------ */
 #visDivOne, #visDivTwo, #visDivThree, #visDivFour{
@@ -48,9 +52,7 @@ h1, h2{
 #getInfo{
     margin-top: 20px !important;
 }
-#flex-main{
-    display: flex;
-}
+
 #content-div{
     display: none;
 }
@@ -67,10 +69,55 @@ h1, h2{
     margin-right: 50px !important;
 }
 
-
-.dashElement {
-    width: 25%;
-    height: 150px;
-    text-align: center;
+#parent-nav{
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+}
+ul{
+    list-style: none !important;
+    justify-content: end !important;
+    background-color: white !important;
+    
+}
+li a{
+    color: black !important;
+    text-transform: uppercase !important;
+    background-color: white !important;
+}
+#flex-main{
+    display: flex;
+    margin: 120px 0px !important;
+}
+li{
+    padding: 30px !important;
+    background-color: white !important;
 }
 
+li a:hover{
+    border-bottom: 2px solid black !important;
+    text-decoration: none !important;
+    transition-duration: 0.2s;
+}
+
+
+@media (max-width: 964px) {
+    #flex-main{
+        flex-direction: column !important;
+    }
+    #survey{
+        margin-top: 50px !important;
+        border: none !important;
+    }
+    #ulNavs{
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    li{
+        padding: 10px !important;
+    }
+    #flex-main{
+        margin-top: 180px !important;
+    }
+  }
