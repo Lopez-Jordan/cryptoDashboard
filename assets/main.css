@@ -67,3 +67,10 @@ h1, h2{
     margin-right: 50px !important;
 }
 
+
+.dashElement {
+    width: 25%;
+    height: 150px;
+    text-align: center;
+}
+
