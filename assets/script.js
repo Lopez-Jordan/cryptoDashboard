@@ -1,3 +1,4 @@
+var profolioProfit=0
 $("#beginBtn").on("click", function(){ // button to take from welcome page to main page
     location.replace("main.html");
 });
@@ -62,7 +63,11 @@ $("#surveyForm").on("submit", function(e){
 
   if (validateForm(newObj)){
     localStorage.setItem(newObj.userName, JSON.stringify(newObj));
+    newUser = localStorage.getItem(newObj.userName)
+    var newUserParse=JSON.parse(newUser)
+    createUser(newObj)
   }
+
   $("#visDivOne").css("display","none");
   $("#visDivTwo").css("display","none");
   $("#visDivThree").css("display","none");
@@ -98,14 +103,14 @@ $("#getInfo").on("click",function(){
     alert("Please enter a coin!");
   }
   var symbol = $("#coinInfo").val();
-  console.log(symbol);
+  
   var descURL = "https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol=" + symbol + "&api_key=4643002f15269f3fab2e433e581986eb8e0d2eb7711e7b78e90fb547713396df";
   fetch(descURL)
   .then(function(response){
     return response.json();
   })
   .then(function(data){
-    console.log(data); // Log the entire data object to inspect its structure
+ // Log the entire data object to inspect its structure
     $("#contentP").text(data.Data.ASSET_DESCRIPTION_SUMMARY);
     
     var imgUrl = data.Data.LOGO_URL;
@@ -120,23 +125,58 @@ $("#getInfo").on("click",function(){
 
 });
 
-var coinList=['BTC','ETH','ETH','ETH','ETH']
-var profitList=[]
-var investment=[100,200,300,400,500]
-var pastDayEarningRateHighSum=[]
-var level = 'advanced'
-var per = [0.1,0.2,0.2,0.2,0.2]
-var totalInvestment=10000000
-var profit=0
 
+function createUser(newUserParse){
+  var coinList=[]
+  for (var i =0; i<newUserParse.coins.length;i++){
+      newCoin=newUserParse.coins[i].symbol
+      if (newCoin!=""){
+      coinList.push(newCoin)}
+
+  }
+  var per=[]
+  for (var i =0; i<newUserParse.coins.length;i++){
+      percent=newUserParse.coins[i].percent
+      if (percent!=NaN){
+      per.push(percent)}
+  }
+  var level = newUserParse.level
+  var totalInvestment=newUserParse.totalInvestment
+  var profit=0
+  var pastDayEarningRateHighSum=[]
+  var profitList=[]
+  
+  populateCoinName(coinList)
+  User(level,coinList,per,totalInvestment)
+}
+
+
+function User(level,coinList,per,totalInvestment){
+  if (level===1){
+  getProfit(coinList,per,totalInvestment)
+  getTradingVolume(coinList)
+  getSocialSentiment(coinList)
+  }else if(level===2){
+  getProfit(coinList,per,totalInvestment)
+  getTradingVolume(coinList)
+  getSocialSentiment(coinList)
+  conversionType(coinList)
+  } else{
+  getProfit(coinList,per,totalInvestment)
+  getTradingVolume(coinList)
+  getSocialSentiment(coinList)
+  conversionType(coinList)
+  volumeFromTo(coinList)   
+  }
+}
 //Part 1: Populate Coin Name
-function populateCoinName(){
+function populateCoinName(coinList){
     for(var i=0; i<coinList.length; i++){
         var title = $(".crypto"+[i]).append("<title></title>")
         title.text(coinList[i])
     }
 }
-populateCoinName()
+
 //Individual cards
 //Part2: Current Price
 //get data from Api, caculate profit, populate to the website
@@ -154,7 +194,7 @@ function getPriceApi(coinList){
                 }
             })
             .then(function(responseData){
-                var price = responseData.USD; 
+                var price = Math.round(responseData.USD); 
                 var paragraph = $(".crypto"+index);
                 var pTag=$("<p>")
                 pTag.addClass("p1")
@@ -179,6 +219,7 @@ function getSocialSentiment(coinList){
                 }
             })
             .then(function(responseData){
+            console.log(responseData)
             var sentiment = responseData.Data.addressesNetGrowth.sentiment; 
             var paragraph = $(".crypto"+index);
             var pTag=$("<p>")
@@ -192,7 +233,8 @@ function getSocialSentiment(coinList){
 
 //Part3: Profit
 //get data from Api, caculate profit, populate to the website
-function getProfit(coinList,per){ 
+function getProfit(coinList,per,totalInvestment){ 
+    console.log(coinList)
     var index=0;
     for (var i=0; i<coinList.length; i++){
         var coinName= coinList[i];
@@ -207,41 +249,30 @@ function getProfit(coinList,per){
             })
             .then(function(responseData){
                 console.log(responseData)
-                console.log(index)
                 var ChangePCT = responseData.RAW.CHANGEPCT24HOUR
-                profit = ChangePCT*totalInvestment*per[index]
+                profit = Math.round(ChangePCT*totalInvestment*per[index])
                 var paragraph = $(".crypto"+index);
                 var pTag=$("<p>")
-                // pTag.addClass("p1")
                 pTag.text("Potential Eearnings: "+profit)
                 paragraph.append(pTag)
                 index++
                 //populate the porfolio cards
-                profit++
-                console.log(profit)
+                profolioProfit+=profit
+                // console.log(profolioProfit)
 
+                var porfolioTestment = $("#totalInvestment");
+                porfolioTestment.text("Total Investment: "+totalInvestment)
+
+                var totalProfit = $("#portfolioProfit");
+                totalProfit.text("Total Profit: "+ profolioProfit)
+
+                var totalNetWorth =totalInvestment+profolioProfit
+                var netWorth = $("#totalNetWorth");
+                netWorth.text("Total Net Worth: "+ totalNetWorth)
             })
                 
     }
-    // console.log(profit)
-    // var Investment = $(".cryptoBig0");
-    // var porfolioTag2=$("<p>")
-    // porfolioTag2.addClass="p2"
-    // porfolioTag2.text("Total Investment: "+totalInvestment)
-    // Investment.append (porfolioTag2)
-
-    // var totalProfit = $(".cryptoBig1"+index);
-    // var porfolioTag3=$("<p>")
-    // porfolioTag3.addClass="p3"
-    // porfolioTag3.text("Total Profit: "+ profit)
-    // totalProfit.append (porfolioTag3)
-
-    // var netWorth = $(".cryptoBig2"+index);
-    // var netWorth= totalInvestment+profit
-    // var porfolioTag4=$("<p>")
-    // porfolioTag4.addClass="p4"
-    // porfolioTag4.text("Total netWorth: "+netWorth)
-    // netWorth.append(porfolioTag4)
+   
  }
 
 
@@ -265,7 +296,7 @@ function getTradingVolume(coinList){
                     var hourClose = responseData.Data.Data[j].close; 
                     allDayVolume+=hourClose;
                 }
-                var volumeAverage = allDayVolume/11;
+                var volumeAverage = Math.round(allDayVolume/11);
                 var paragraph = $(".crypto"+index);
                 var pTag=$("<p>")
                 pTag.addClass("p2")
@@ -316,8 +347,8 @@ function conversionType(coinList){
                     }
                 })
                 .then(function(responseData){
-                    var volumeFrom = responseData.Data.Data[0].volumefrom
-                    var volumeTo = responseData.Data.Data[0].volumeto
+                    var volumeFrom = Math.round(responseData.Data.Data[0].volumefrom)
+                    var volumeTo = Math.round(responseData.Data.Data[0].volumeto)
                     var paragraph = $(".crypto"+index);
                     var pTag1=$("<p>")
                     pTag1.addClass("p2")
@@ -333,22 +364,3 @@ function conversionType(coinList){
         }
 
 
-function User(level,coinList,per){
-    if (level===1){
-    getProfit(coinList,per)
-    getTradingVolume(coinList)
-    getSocialSentiment(coinList)
-    }else if(level===2){
-    getProfit(coinList,per)
-    getTradingVolume(coinList)
-    getSocialSentiment(coinList)
-    conversionType(coinList)
-    } else{
-    getProfit(coinList,per)
-    getTradingVolume(coinList)
-    getSocialSentiment(coinList)
-    conversionType(coinList)
-    volumeFromTo(coinList)   
-    }
-}
-User(1,coinList,per)
