@@ -1,3 +1,4 @@
+
 var coinList=['BTC','ETH','ETH','ETH','ETH']
 
 var profitList=[]
@@ -12,6 +13,56 @@ function populateCoinName(){
         var title = $(".crypto"+[i]).append("<title></title>")
         title.text(coinList[i])
     }
+
+$("#beginBtn").on("click", function(){ // button to take from welcome page to main page
+    location.replace("main.html");
+});
+
+
+
+    var requestUrl="https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR"
+    fetch(requestUrl)
+        .then(function(response){
+            // var response=!response.ok
+            if (!response.ok){
+                showError();
+            }else{
+     
+                return response.json();    
+            }
+        })
+        .then(function(data){
+            
+            console.log(data)
+           
+    });  
+function validateForm(data){ // validating the survey object for correct user input
+  if (data.userName == ""){
+    alert("Please enter a name"); // change to a modal
+    return false;
+  }
+  if (isNaN(data.totalInvestment)){
+    alert("Not a number"); // change to a modal
+    return false;
+  }
+  if (data.totalInvestment < 0 || data.totalInvestment > 100000000){
+    alert("Incorrect investment Value, please enter a value in the correct range (0-100,000,000)");
+    return false;
+  }
+  var totalPercent = 0;
+  for (var i=0; i<5; i++){
+    totalPercent += data.coins[i].percent;
+  }
+  if (isNaN(totalPercent)){
+    alert("Make sure you have '0's' for values coins you don't want to invest it");
+    return false;
+  }
+  if (totalPercent != 100){
+    alert("Your portfolio weights do not add up to 100!");
+    return false;
+  }
+  return true;
+
 }
 populateCoinName()
 //Part2: Current Price
@@ -216,6 +267,7 @@ function getTradingVolume(coinList){
     
 
 
+
 // function beginnerUser(){
 //     getProfitApi()
 //     getTradingVolumeApi()
@@ -239,3 +291,16 @@ function getTradingVolume(coinList){
 //     getSocialSentiment()
 //     getNews()
 // }
+
+    var imgUrl = data.Data.LOGO_URL;
+    var nameOfCoin = data.Data.NAME;
+    $("#coinLogo").attr('src', imgUrl);
+    $("#nameOfCoin").text(nameOfCoin);
+  })
+  .catch(function(){
+    alert("Please enter a valid coin");
+  });
+  
+
+});
+
