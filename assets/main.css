@@ -88,7 +88,7 @@ li a{
 }
 #flex-main{
     display: flex;
-    margin-top: 120px !important;
+    margin: 120px 0px !important;
 }
 li{
     padding: 30px !important;
