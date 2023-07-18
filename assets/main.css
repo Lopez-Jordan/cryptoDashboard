@@ -39,6 +39,7 @@ h1, h2{
 .submit-button:hover{
     background: none;
     background-color: black;
+    transition-duration: 0.2s !important;
 }
 /* ------------------------------------------------------------------ */
 #visDivOne, #visDivTwo, #visDivThree, #visDivFour{
@@ -80,31 +81,43 @@ ul{
     background-color: white !important;
     
 }
-a{
-    color: white !important;
+li a{
+    color: black !important;
     text-transform: uppercase !important;
-
+    background-color: white !important;
 }
 #flex-main{
     display: flex;
-    margin-top: 90px !important;
+    margin-top: 120px !important;
 }
 li{
     padding: 30px !important;
     background-color: white !important;
 }
-li a{
-    background-color: white !important;
-    color: black !important;
-    font-weight: bolder !important;
-}
-li:hover{
-    background-color: black !important;
-    color:  white !important;
-}
+
 li a:hover{
-    border: none !important;
+    border-bottom: 2px solid black !important;
     text-decoration: none !important;
-    background-color: black !important;
-    color: white !important;
+    transition-duration: 0.2s;
 }
+
+
+@media (max-width: 964px) {
+    #flex-main{
+        flex-direction: column !important;
+    }
+    #survey{
+        margin-top: 50px !important;
+        border: none !important;
+    }
+    #ulNavs{
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    li{
+        padding: 10px !important;
+    }
+    #flex-main{
+        margin-top: 180px !important;
+    }
+  }
