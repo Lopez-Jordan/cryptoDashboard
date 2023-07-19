@@ -129,14 +129,6 @@ li a:hover{
     border: 2px solid white !important;
 }
 
-.uk-modal-dialog  {
-    text-align: center !important;
-}
-div.my-modal {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
 
 
 
