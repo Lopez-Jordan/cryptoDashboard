@@ -170,10 +170,11 @@ span{
     li{
         padding: 10px !important;
     }
-    #flex-main{
-        /* HERE  */
-    }
     #filler{
         margin-bottom: 180px !important;
     }
   }
+
+.uk-modal-dialog {
+    text-align: center;
+}
