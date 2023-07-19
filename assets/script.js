@@ -1,8 +1,10 @@
 init();
 function init(){
   if(localStorage.length > 0){
-    var name = JSON.parse(localStorage.getItem(localStorage.key(0))).userName
-
+    var name = JSON.parse(localStorage.getItem(localStorage.key(0))).userName;
+    if (typeof name === "undefined"){
+      return;
+    }
     $("#greet").css("display","block");
     $("#greet").text("Welcome back, " + name);
     return;
