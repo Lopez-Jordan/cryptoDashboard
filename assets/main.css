@@ -150,6 +150,9 @@ span{
 #filler{
     margin-bottom: 100px !important;
 }
+#fix{
+    width: fit-content !important;
+}
 
 
 @media (max-width: 964px) {
