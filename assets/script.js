@@ -4,15 +4,15 @@ $("#beginBtn").on("click", function(){ // button to take from welcome page to ma
 });
 function validateForm(data){ // validating the survey object for correct user input
   if (data.userName == ""){
-    UIkit.modal.alert('UIkit alert!');
-    return false;
+    UIkit.modal('#noName').show();
+    // return false;
   }
   if (isNaN(data.totalInvestment)){
-    UIkit.modal.alert('UIkit alert!');
+    UIkit.modal('#noInvestment').show();
     return false;
   }
   if (data.totalInvestment < 0 || data.totalInvestment > 100000000){
-    UIkit.modal.alert('UIkit alert!');
+    UIkit.modal('#ivalidInvestment').show();
     return false;
   }
   var totalPercent = 0;
@@ -20,11 +20,11 @@ function validateForm(data){ // validating the survey object for correct user in
     totalPercent += data.coins[i].percent;
   }
   if (isNaN(totalPercent)){
-    UIkit.modal.alert('UIkit alert!');
+    UIkit.modal('#makeZero').show();
     return false;
   }
   if (totalPercent != 100){
-    UIkit.modal.alert('UIkit alert!');
+    UIkit.modal('#makeOneHundred').show();
     return false;
   }
   return true;
