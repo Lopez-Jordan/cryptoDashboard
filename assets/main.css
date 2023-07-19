@@ -132,6 +132,10 @@ li a:hover{
 .uk-modal-dialog  {
     text-align: center !important;
 }
+div.my-modal {
+    display: flex;
+    flex-flow: column nowrap;
+}
 
 
 
