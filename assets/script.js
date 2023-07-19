@@ -101,7 +101,8 @@ $("#getInfo").on("click",function(){
   $("#content-div").css("display", "block");
   
   if ($("#coinInfo").val() == ""){
-    alert("Please enter a coin!");
+    console.log("no coin selected");
+    UIkit.modal('#noCoinName').show();
   }
   var symbol = $("#coinInfo").val();
   
@@ -120,7 +121,7 @@ $("#getInfo").on("click",function(){
     $("#nameOfCoin").text(nameOfCoin);
   })
   .catch(function(){
-    alert("Please enter a valid coin");
+    UIkit.modal('#noValidCoin').show();
   });
   
 
