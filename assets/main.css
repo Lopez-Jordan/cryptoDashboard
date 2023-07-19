@@ -6,11 +6,12 @@
     color: white !important;
     background-color: black !important;
 }
+input{
+    background-color: black !important;
+}
 html{
     color: black !important;
 }
-
-
 h1, h2{
     color: white !important;
     padding: 10px !important;
@@ -88,7 +89,7 @@ li a{
 }
 #flex-main{
     display: flex;
-    margin: 120px 0px !important;
+    margin: 120px 0px 70px 0px !important;
 }
 li{
     padding: 30px !important;
@@ -100,6 +101,50 @@ li a:hover{
     text-decoration: none !important;
     transition-duration: 0.2s;
 }
+#analyze{
+    display: flex !important;
+    justify-content: left !important;
+    margin-left: 50px !important;
+}
+
+#flexCards{
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+#totalClass{
+    display: none;
+    margin-left: 50px !important;
+}
+#flexCards > *{
+    background-color: white !important;
+    color: black !important;
+}
+.white{
+    background-color: white !important;
+}
+.black{
+    color: black !important;
+}
+.indivCard{
+    border: 2px solid white !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 964px) {
