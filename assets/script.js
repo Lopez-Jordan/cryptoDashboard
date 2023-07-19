@@ -66,6 +66,7 @@ $("#surveyForm").on("submit", function(e){
     newUser = localStorage.getItem(newObj.userName)
     var newUserParse=JSON.parse(newUser)
     createUser(newObj)
+    $("#totalClass").css("display","block");
   }
 
   $("#visDivOne").css("display","none");
@@ -175,6 +176,7 @@ function populateCoinName(coinList){
         var title = $(".crypto"+[i]).append("<title></title>")
         title.text(coinList[i])
     }
+
 }
 
 //Individual cards
@@ -198,7 +200,7 @@ function getPriceApi(coinList){
                 var paragraph = $(".crypto"+index);
                 var pTag=$("<p>")
                 pTag.addClass("p1")
-                pTag.text("Current Pric: "+price)
+                pTag.text("price: "+price + " $")
                 paragraph.append(pTag)
                 index++
             })      
@@ -224,7 +226,7 @@ function getSocialSentiment(coinList){
             var paragraph = $(".crypto"+index);
             var pTag=$("<p>")
             pTag.addClass("p1")
-            pTag.text("Market Sentiment: "+sentiment)
+            pTag.text("market sentiment: "+sentiment)
             paragraph.append(pTag)
             index++
             }) 
@@ -253,7 +255,7 @@ function getProfit(coinList,per,totalInvestment){
                 profit = Math.round(ChangePCT*totalInvestment*per[index])
                 var paragraph = $(".crypto"+index);
                 var pTag=$("<p>")
-                pTag.text("Eearnings: "+profit + " $")
+                pTag.text("earnings: "+profit + " $")
                 paragraph.append(pTag)
                 index++
                 //populate the porfolio cards
@@ -304,7 +306,7 @@ function getTradingVolume(coinList){
                 var paragraph = $(".crypto"+index);
                 var pTag=$("<p>")
                 pTag.addClass("p2")
-                pTag.text("Hrly avg volume (close):" +volumeAverage)
+                pTag.text("hrly avg vol (close): " +volumeAverage)
                 paragraph.append(pTag)
                 index++
             }) 
@@ -330,7 +332,7 @@ function conversionType(coinList){
                 var paragraph = $(".crypto"+index);
                 var pTag=$("<p>")
                 pTag.addClass("p2")
-                pTag.text("Conversion type: " +type)
+                pTag.text("conversion type: " +type)
                 paragraph.append(pTag)
                 index++
             }) 
@@ -356,10 +358,10 @@ function conversionType(coinList){
                     var paragraph = $(".crypto"+index);
                     var pTag1=$("<p>")
                     pTag1.addClass("p2")
-                    pTag1.text("Volume (open): " +volumeFrom + " shares")
+                    pTag1.text("vol (open): " +volumeFrom)
                     var pTag2=$("<p>")
                     pTag2.addClass("p3")
-                    pTag2.text("Volume (close): " +volumeTo + " shares")
+                    pTag2.text("vol (close): " +volumeTo)
                     paragraph.append(pTag1)
                     paragraph.append(pTag2)
                     index++
