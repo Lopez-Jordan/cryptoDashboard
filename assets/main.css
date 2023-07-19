@@ -47,7 +47,6 @@ h1, h2{
     display: none;
 }
 #education{
-    border: 2px solid black;
     padding-left: 50px !important;
 }
 #getInfo{
@@ -86,10 +85,7 @@ li a{
     color: black !important;
     text-transform: uppercase !important;
     background-color: white !important;
-}
-#flex-main{
-    display: flex;
-    margin: 120px 0px 70px 0px !important;
+    text-decoration: none !important;
 }
 li{
     padding: 30px !important;
@@ -128,23 +124,35 @@ li a:hover{
 .indivCard{
     border: 2px solid white !important;
 }
+#last{
+    margin-left: 50px !important;
+    margin-top: 30px !important;
+    margin-bottom: 100px !important;
+    display: none;
+}
+span{
+    font-size: 15px !important;
+}
 
+#greet{
+    display: none;
+    padding-left: 60px !important;
+    padding-bottom: 30px !important;
+    color: #ff66cc !important;
 
+}
 
+#flex-main{
+    display: flex;
+    margin-right: 70px !important;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+#filler{
+    margin-bottom: 100px !important;
+}
+#fix{
+    width: fit-content !important;
+}
 
 
 @media (max-width: 964px) {
@@ -163,6 +171,9 @@ li a:hover{
         padding: 10px !important;
     }
     #flex-main{
-        margin-top: 180px !important;
+        /* HERE  */
+    }
+    #filler{
+        margin-bottom: 180px !important;
     }
   }
