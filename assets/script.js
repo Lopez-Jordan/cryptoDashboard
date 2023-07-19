@@ -170,12 +170,14 @@ function User(level,coinList,per,totalInvestment){
   conversionType(coinList)
   volumeFromTo(coinList)   
   }
+  
 }
 //Part 1: Populate Coin Name
 function populateCoinName(coinList){
     for(var i=0; i<coinList.length; i++){
         var title = $(".crypto"+[i]).append("<title></title>")
-        title.text(coinList[i])
+        title.text([i+1]+". "+coinList[i])
+     
     }
 
 }
@@ -239,6 +241,9 @@ function getProfit(coinList,per,totalInvestment){
     // console.log(coinList)
     var index=0;
     for (var i=0; i<coinList.length; i++){
+
+        
+
         var coinName= coinList[i];
         var requestUrl="https://min-api.cryptocompare.com/data/generateAvg?fsym="+coinName+"&tsym=USD&e=Kraken&api_key=4643002f15269f3fab2e433e581986eb8e0d2eb7711e7b78e90fb547713396df";
         fetch(requestUrl)
@@ -257,6 +262,11 @@ function getProfit(coinList,per,totalInvestment){
                 var pTag=$("<p>")
                 pTag.text("earnings: "+profit + " $")
                 paragraph.append(pTag)
+
+                var cardboard = $("#card"+index);
+                console.log(cardboard)
+                cardboard.addClass("p-3 border border-info");
+
                 index++
                 //populate the porfolio cards
                 portfolioProfit+=profit
@@ -266,19 +276,21 @@ function getProfit(coinList,per,totalInvestment){
                 portfolioTestment.text("Investment: "+totalInvestment + " $")
 
                 var totalProfit = $("#portfolioProfit");
-                if (portfolioProfit < 0)
+                if (portfolioProfit < 0){
+                    totalNetWorth = 0;
+                }
                 totalProfit.text("Profit/Loss: "+ portfolioProfit + " $")
 
                 var totalNetWorth =totalInvestment+portfolioProfit
                 var netWorth = $("#totalNetWorth");
                 if (totalNetWorth < 0){
-                    totalNetWorth = 0;
+                    
                 }
                 netWorth.text("Net Worth: "+ totalNetWorth + " $")
-            })
+
                 
+            })
     }
-   
  }
 
 
