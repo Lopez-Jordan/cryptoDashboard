@@ -4,15 +4,15 @@ $("#beginBtn").on("click", function(){ // button to take from welcome page to ma
 });
 function validateForm(data){ // validating the survey object for correct user input
   if (data.userName == ""){
-    alert("Please enter a name"); // change to a modal
+    UIkit.modal('noName').show();
     return false;
   }
   if (isNaN(data.totalInvestment)){
-    alert("Not a number"); // change to a modal
+    UIkit.modal('noInvestment').show();
     return false;
   }
   if (data.totalInvestment < 0 || data.totalInvestment > 100000000){
-    alert("Incorrect investment Value, please enter a value in the correct range (0-100,000,000)");
+    UIkit.modal('ivalidInvestment').show();
     return false;
   }
   var totalPercent = 0;
@@ -20,11 +20,11 @@ function validateForm(data){ // validating the survey object for correct user in
     totalPercent += data.coins[i].percent;
   }
   if (isNaN(totalPercent)){
-    alert("Make sure you have '0's' for values coins you don't want to invest it");
+    UIkit.modal('makeZero').show();
     return false;
   }
   if (totalPercent != 100){
-    alert("Your portfolio weights do not add up to 100!");
+    UIkit.modal('makeOneHundred').show();
     return false;
   }
   return true;
