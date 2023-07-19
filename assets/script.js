@@ -219,7 +219,6 @@ function getSocialSentiment(coinList){
                 }
             })
             .then(function(responseData){
-            console.log(responseData)
             var sentiment = responseData.Data.addressesNetGrowth.sentiment; 
             var paragraph = $(".crypto"+index);
             var pTag=$("<p>")
@@ -234,7 +233,7 @@ function getSocialSentiment(coinList){
 //Part3: Profit
 //get data from Api, caculate profit, populate to the website
 function getProfit(coinList,per,totalInvestment){ 
-    console.log(coinList)
+    // console.log(coinList)
     var index=0;
     for (var i=0; i<coinList.length; i++){
         var coinName= coinList[i];
@@ -248,7 +247,7 @@ function getProfit(coinList,per,totalInvestment){
                 }
             })
             .then(function(responseData){
-                console.log(responseData)
+                // console.log(responseData)
                 var ChangePCT = responseData.RAW.CHANGEPCT24HOUR
                 profit = Math.round(ChangePCT*totalInvestment*per[index])
                 var paragraph = $(".crypto"+index);
@@ -363,4 +362,28 @@ function conversionType(coinList){
             }     
         }
 
+
+
+$("#conversionButton").on("click",function(){
+  
+  console.log("1");
+  var input = $("#coinInput1").val();
+  console.log(input);
+  var amount = $("#amtInput").val();
+  var output = $("#coinInput2").val();
+  var requestUrl="https://api.coinlayer.com/convert?access_key=aba7605942c68749d9255a7a4124507a"+"&from="+input+"&to="+output+"&amount="+amount
+  console.log(requestUrl);
+  fetch(requestUrl)
+      .then(function(response){          
+          return response.json(); 
+      })
+      .then(function(data){
+          console.log(data);
+          var coinConversion = data.result
+          console.log(coinConversion);
+          var amtOutput = $('#amtOutput')
+          amtOutput.text(coinConversion)
+
+      });
+})
 
