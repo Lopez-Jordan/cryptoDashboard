@@ -1,4 +1,4 @@
-var profolioProfit=0
+var portfolioProfit=0
 $("#beginBtn").on("click", function(){ // button to take from welcome page to main page
     location.replace("main.html");
 });
@@ -66,6 +66,7 @@ $("#surveyForm").on("submit", function(e){
     newUser = localStorage.getItem(newObj.userName)
     var newUserParse=JSON.parse(newUser)
     createUser(newObj)
+    $("#totalClass").css("display","block");
   }
 
   $("#visDivOne").css("display","none");
@@ -175,6 +176,7 @@ function populateCoinName(coinList){
         var title = $(".crypto"+[i]).append("<title></title>")
         title.text(coinList[i])
     }
+
 }
 
 //Individual cards
@@ -198,7 +200,7 @@ function getPriceApi(coinList){
                 var paragraph = $(".crypto"+index);
                 var pTag=$("<p>")
                 pTag.addClass("p1")
-                pTag.text("Current Pric: "+price)
+                pTag.text("price: "+price + " $")
                 paragraph.append(pTag)
                 index++
             })      
@@ -223,7 +225,7 @@ function getSocialSentiment(coinList){
             var paragraph = $(".crypto"+index);
             var pTag=$("<p>")
             pTag.addClass("p1")
-            pTag.text("Senitment: "+sentiment)
+            pTag.text("market sentiment: "+sentiment)
             paragraph.append(pTag)
             index++
             }) 
@@ -252,22 +254,26 @@ function getProfit(coinList,per,totalInvestment){
                 profit = Math.round(ChangePCT*totalInvestment*per[index])
                 var paragraph = $(".crypto"+index);
                 var pTag=$("<p>")
-                pTag.text("Potential Eearnings: "+profit)
+                pTag.text("earnings: "+profit + " $")
                 paragraph.append(pTag)
                 index++
                 //populate the porfolio cards
-                profolioProfit+=profit
+                portfolioProfit+=profit
                 // console.log(profolioProfit)
 
-                var porfolioTestment = $("#totalInvestment");
-                porfolioTestment.text("Total Investment: "+totalInvestment)
+                var portfolioTestment = $("#totalInvestment");
+                portfolioTestment.text("Investment: "+totalInvestment + " $")
 
                 var totalProfit = $("#portfolioProfit");
-                totalProfit.text("Total Profit: "+ profolioProfit)
+                if (portfolioProfit < 0)
+                totalProfit.text("Profit/Loss: "+ portfolioProfit + " $")
 
-                var totalNetWorth =totalInvestment+profolioProfit
+                var totalNetWorth =totalInvestment+portfolioProfit
                 var netWorth = $("#totalNetWorth");
-                netWorth.text("Total Net Worth: "+ totalNetWorth)
+                if (totalNetWorth < 0){
+                    totalNetWorth = 0;
+                }
+                netWorth.text("Net Worth: "+ totalNetWorth + " $")
             })
                 
     }
@@ -299,7 +305,7 @@ function getTradingVolume(coinList){
                 var paragraph = $(".crypto"+index);
                 var pTag=$("<p>")
                 pTag.addClass("p2")
-                pTag.text("Hourly average close volume:" +volumeAverage)
+                pTag.text("hrly avg vol (close): " +volumeAverage)
                 paragraph.append(pTag)
                 index++
             }) 
@@ -325,7 +331,7 @@ function conversionType(coinList){
                 var paragraph = $(".crypto"+index);
                 var pTag=$("<p>")
                 pTag.addClass("p2")
-                pTag.text("Conversion type: " +type)
+                pTag.text("conversion type: " +type)
                 paragraph.append(pTag)
                 index++
             }) 
@@ -351,10 +357,10 @@ function conversionType(coinList){
                     var paragraph = $(".crypto"+index);
                     var pTag1=$("<p>")
                     pTag1.addClass("p2")
-                    pTag1.text("Volume from: " +volumeFrom)
+                    pTag1.text("vol (open): " +volumeFrom)
                     var pTag2=$("<p>")
                     pTag2.addClass("p3")
-                    pTag2.text("Volume to: " +volumeTo)
+                    pTag2.text("vol (close): " +volumeTo)
                     paragraph.append(pTag1)
                     paragraph.append(pTag2)
                     index++
