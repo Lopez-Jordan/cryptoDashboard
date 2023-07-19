@@ -16,7 +16,7 @@
   />
 </head>
 
-<body>
+<full>
   <header>
     <div id="parent-nav">
       <nav>
@@ -244,11 +244,87 @@
 
 
 
+  <!-- MODALS -->
+<div id="noName" uk-modal>
+  <div class="uk-modal-dialog uk-margin-auto uk-margin-auto-vertical">
+      <!-- Content for the modal goes here -->
+      <p>Please enter a name.</p>
+      <p>Click anywhere on the screen to continue.</p>
+  </div>
+</div>
+<div id="noInvestment" uk-modal>
+  <div class="uk-modal-dialog uk-margin-auto uk-margin-auto-vertical ">
+      <!-- Content for the modal goes here -->
+      <p>Not a number.</p>
+      <p>Click anywhere on the screen to continue.</p>
+  </div>
+</div>
+<div id="ivalidInvestment" uk-modal>
+  <div class="uk-modal-dialog uk-margin-auto uk-margin-auto-vertical">
+      <!-- Content for the modal goes here -->
+      <p>Incorrect investment Value, please enter a value in the correct range (0-100,000,000).</p>
+      <p>Click anywhere on the screen to continue.</p>
+  </div>
+</div>
+<div id="makeZero" uk-modal>
+  <div class="uk-modal-dialog uk-margin-auto uk-margin-auto-vertical">
+      <!-- Content for the modal goes here -->
+      <p>Make sure you have '0's' for values coins you don't want to invest it.</p>
+      <p>Click anywhere on the screen to continue.</p>
+  </div>
+</div>
+<div id="makeOneHundred" uk-modal>
+  <div class="uk-modal-dialog uk-margin-auto uk-margin-auto-vertical">
+      <!-- Content for the modal goes here -->
+      <p>Your portfolio weights do not add up to 100!</p>
+      <p>Click anywhere on the screen to continue.</p>
+  </div>
+</div>
+<div id="noCoinName" uk-modal>
+  <div class="uk-modal-dialog uk-margin-auto uk-margin-auto-vertical">
+    <!-- Content for the modal goes here -->
+    <p>Please enter a coin!</p>
+    <p>Click anywhere on the screen to continue.</p>
+  </div>
+</div>
+<div id="noValidCoin" uk-modal>
+  <div class="uk-modal-dialog uk-margin-auto uk-margin-auto-vertical">
+    <!-- Content for the modal goes here -->
+    <p>Please enter a valid coin.</p>
+    <p>Click anywhere on the screen to continue.</p>
+  </div>
+</div>
 
-  
+<h1 class="uk-margin">Enter info below to convert coins!</h1>
+<div class="uk-flex uk-flex-row">
+  <div class="conversion-form">
+    <div class="uk-card uk-card-default uk-card-full">
+      <!-- <form class="uk-form-stacked"> -->
+        <div class="uk-margin">
+          <label class="uk-form-label" for="coinInput1">What coin would you like to convert?</label>
+          <div class="uk-form-controls">
+            <input id="coinInput1" class="uk-input uk-form-width-medium" type="text" placeholder="ie: BTC">
+            <input id="amtInput" class="uk-input uk-form-width-small" type="number" placeholder="Enter Amount">
+          </div>
+        </div>
+        <div class="uk-margin">
+          <label class="uk-form-label" for="coinInput2">What coin would you like to convert it to?</label>
+          <div class="uk-form-controls">
+            <input id="coinInput2" class="uk-input uk-form-width-medium" type="text" placeholder="ie: ETH">
+            <p id="amtOutput"></p>
+          </div>
+        </div>
+        <div class="uk-margin">
+          <button id="conversionButton">Submit</button>
+        </div>
+      <!-- </form> -->
+    </div>
+  </div>
+  <div id="conversionResult" class="uk-card uk-card-default uk-card-full uk-margin-left">Your total amount after conversion will display here</div>
+</div>    
 
 
-</body>
+</body> 
 
 <!-- jQuery and normal script file -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
