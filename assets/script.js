@@ -47,6 +47,7 @@ function validateForm(data){ // validating the survey object for correct user in
 // submitting and validating the form itself
 $("#surveyForm").on("submit", function(e){
   e.preventDefault(); // still haven't created object yet
+
   var coin1Obj = {
     symbol : $("#coin1").val(),
     percent: parseInt($("#percent1").val())
@@ -92,6 +93,8 @@ $("#surveyForm").on("submit", function(e){
   $("#nextOne").css("display","block");
   $("#nextTwo").css("display","block");
   $("#nextThree").css("display","block");
+
+  $("#last").css("display","block");
 });
 // creating the dynamic parts of the form
 $("#create").on("click", function(){
@@ -274,7 +277,7 @@ function getProfit(coinList,per,totalInvestment){
                 profit = Math.round(ChangePCT*totalInvestment*per[index])
                 var paragraph = $(".crypto"+index);
                 var pTag=$("<p>")
-                pTag.text("earnings: "+profit + " $")
+                pTag.text("profit: $ "+profit)
                 paragraph.append(pTag)
 
                 var cardboard = $("#card"+index);
@@ -287,20 +290,20 @@ function getProfit(coinList,per,totalInvestment){
                 // console.log(profolioProfit)
 
                 var portfolioTestment = $("#totalInvestment");
-                portfolioTestment.text("Investment: "+totalInvestment + " $")
+                portfolioTestment.text("Investment: $ "+totalInvestment)
 
                 var totalProfit = $("#portfolioProfit");
                 if (portfolioProfit < 0){
                     totalNetWorth = 0;
                 }
-                totalProfit.text("Profit/Loss: "+ portfolioProfit + " $")
+                totalProfit.text("Profit: $ "+ portfolioProfit)
 
                 var totalNetWorth =totalInvestment+portfolioProfit
                 var netWorth = $("#totalNetWorth");
                 if (totalNetWorth < 0){
                     
                 }
-                netWorth.text("Net Worth: "+ totalNetWorth + " $")
+                netWorth.text("Net Worth: $ "+ totalNetWorth)
 
                 
             })
@@ -399,7 +402,7 @@ function conversionType(coinList){
 
 $("#conversionButton").on("click",function(){
   
-  console.log("1");
+
   var input = $("#coinInput1").val();
   console.log(input);
   var amount = $("#amtInput").val();
@@ -411,12 +414,10 @@ $("#conversionButton").on("click",function(){
           return response.json(); 
       })
       .then(function(data){
-          console.log(data);
           var coinConversion = data.result
-          console.log(coinConversion);
-          var amtOutput = $('#amtOutput')
-          amtOutput.text(coinConversion)
+          $('#amtOutput').text(amount + " " + input + "  =  " + coinConversion + " " + output);
 
       });
 })
 
+"1 Bitcoin = 0.13 eth"

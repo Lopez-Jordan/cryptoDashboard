@@ -130,6 +130,9 @@ li a:hover{
 }
 #last{
     margin-left: 50px !important;
+    margin-top: 30px !important;
+    margin-bottom: 100px !important;
+    display: none;
 }
 #greet{
     display: none;
@@ -139,7 +142,9 @@ li a:hover{
     color: #ff66cc !important;
     
 }
-
+span{
+    font-size: 15px !important;
+}
 
 
 
