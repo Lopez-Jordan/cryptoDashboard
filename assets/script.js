@@ -1,13 +1,14 @@
 init();
-
 function init(){
-  var totalItems = localStorage.length;
-  var mostRecentItem = localStorage.getItem(localStorage.key(totalItems - 1));
-  var person = JSON.parse(mostRecentItem);
-  if (person.visited == true){
-    $("#greet").text("Welcome back, " + person.userName);
-    $("#greet").css("display", "block");
-    $("#flex-main").css("margin-top", "0px");
+  if(localStorage.length > 0){
+    var name = JSON.parse(localStorage.getItem(localStorage.key(0))).userName
+
+    $("#greet").css("display","block");
+    $("#greet").text("Welcome back, " + name);
+    return;
+  }
+  else{
+    return;
   }
 }
 
