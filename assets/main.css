@@ -47,7 +47,6 @@ h1, h2{
     display: none;
 }
 #education{
-    border: 2px solid black;
     padding-left: 50px !important;
 }
 #getInfo{
@@ -86,10 +85,11 @@ li a{
     color: black !important;
     text-transform: uppercase !important;
     background-color: white !important;
+    text-decoration: none !important;
 }
 #flex-main{
     display: flex;
-    margin: 120px 0px 70px 0px !important;
+    margin: 0px 0px 70px 0px !important;
 }
 li{
     padding: 30px !important;
@@ -128,6 +128,17 @@ li a:hover{
 .indivCard{
     border: 2px solid white !important;
 }
+#last{
+    margin-left: 50px !important;
+}
+#greet{
+    display: none;
+    margin-top: 120px !important;
+    padding-left: 50px !important;
+    padding-bottom: 30px !important;
+    color: #ff66cc !important;
+    
+}
 
 
 
@@ -163,6 +174,9 @@ li a:hover{
         padding: 10px !important;
     }
     #flex-main{
-        margin-top: 180px !important;
+        margin-top: 0px !important;
+    }
+    #greet{
+        margin-top: 220px !important;
     }
   }

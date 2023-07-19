@@ -1,3 +1,18 @@
+init();
+
+function init(){
+  var totalItems = localStorage.length;
+  var mostRecentItem = localStorage.getItem(localStorage.key(totalItems - 1));
+  var person = JSON.parse(mostRecentItem);
+  if (person.visited == true){
+    $("#greet").text("Welcome back, " + person.userName);
+    $("#greet").css("display", "block");
+    $("#flex-main").css("margin-top", "0px");
+  }
+}
+
+
+
 var portfolioProfit=0
 $("#beginBtn").on("click", function(){ // button to take from welcome page to main page
     location.replace("main.html");
@@ -227,7 +242,7 @@ function getSocialSentiment(coinList){
             var paragraph = $(".crypto"+index);
             var pTag=$("<p>")
             pTag.addClass("p1")
-            pTag.text("market sentiment: "+sentiment)
+            pTag.text("market: "+sentiment)
             paragraph.append(pTag)
             index++
             }) 
