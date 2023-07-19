@@ -14,5 +14,32 @@ Overall, Crypto Dashboard is a valuable tool for cryptocurrency enthusiasts and 
 | CSS     | [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)      |   
 | Git | [https://git-scm.com/](https://git-scm.com/)     |  
 | Javascript | [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |
+| JQuery | [https://api.jquery.com/category/attributes/](https://api.jquery.com/category/attributes/)
+| BootStrap    | [https://getbootstrap.com/docs/5.3/getting-started/introduction/](https://getbootstrap.com/docs/5.3/getting-started/introduction/) |
+| UIKit    | [https://getuikit.com/docs/introduction](https://getuikit.com/docs/introduction) |
+| CryptoCompare API    | [https://min-api.cryptocompare.com/documentation](https://min-api.cryptocompare.com/documentation) |
+| CoinLayer API    | [https://coinlayer.com/documentation](https://coinlayer.com/documentation) |
 
-## Credits
+
+## Author Info
+
+
+### Jordan Lopez 
+
+
+* [LinkedIn](https://www.linkedin.com/in/jordanlopez123/)
+* [Github](https://github.com/Lopez-Jordan)
+
+
+### Xiaoran Cai 
+
+
+* [LinkedIn](https://www.linkedin.com/in/xrcai/)
+* [Github](https://github.com/Ailllycxr)
+
+
+### Jesus Thomas Reyes 
+
+
+* [LinkedIn](https://www.linkedin.com/in/jesus-thomas-reyes-aa001a192/)
+* [Github](https://github.com/jesustgr)
